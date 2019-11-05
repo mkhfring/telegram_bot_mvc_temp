@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  vip_report_bot:
+    image: docker.bale.ai/bank/vip_admin:1.26-43
+    volumes:
+      - /home/vipbot:/home/vipbot
+    container_name: "vip_admin"
+
+    environment:
+      - BASE_URL=wss://napi.bale.ai/v1/bots/
+      - SDK_USE_GRAYLOG=2
+      - LOG_SOURCE=vip_admin
+      - SDK_GRAYLOG_HOST=192.168.21.235
+      - SDK_GRAYLOG_PORT=12201
+      - SDK_LOG_LEVEL=20
+      - SDK_LOG_FACILITY_NAME=vip_report_facility
+      - REPORT_HOUR=6
+      - REPORT_MINUTE=22
+#      - BOT_TOKEN=
+#      - supported_users=
+      - POSTGRES_DB=vip_db

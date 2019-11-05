@@ -1,0 +1,6 @@
+sqlalchemy==1.2.16
+psycopg2-binary==2.8.3
+python-telegram-bot==11.1.0
+prometheus-client==0.7.1
+graypy
+retrying
